@@ -21,7 +21,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center  overflow-hidden bg-slate-50 dark:bg-slate-950"
+      className="relative min-h-screen pt-20 lg:pt-2 flex items-center overflow-hidden bg-slate-50 dark:bg-slate-950"
     >
       {/* 1. Subtle Grid Background (Technical Look) */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -32,7 +32,7 @@ const Hero = () => {
       {/* 2. Top Glow Effect */}
       <div className="absolute left-0 top-0 h-96 w-96 bg-cyan-500/10 rounded-full blur-[128px] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <div className="relative max-w-7xl mx-auto px-6 md:px-10 2xl:px-1 w-full py-12 lg:py-0">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="max-w-4xl">
@@ -66,7 +66,6 @@ const Hero = () => {
               style={{ animationDelay: "0.2s" }}
             >
               <div className="flex items-center gap-2 text-slate-800 dark:text-slate-200">
-                
                 <span>React.js Frontend Developer</span>
               </div>
 
@@ -98,7 +97,7 @@ const Hero = () => {
                 href="https://www.linkedin.com/in/nikitachaturvedi-a8bb90275"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-slate-900 dark:bg-white/70 text-white dark:text-slate-900 rounded-lg font-bold hover:bg-cyan-600 dark:hover:bg-cyan-400 transition-all duration-300 flex items-center gap-2  hover:-translate-y-1"
+                className="px-8 py-4 bg-slate-900 dark:bg-white/70 text-white dark:text-slate-900 rounded-lg font-bold hover:bg-cyan-600 dark:hover:bg-cyan-400 transition-all duration-300 flex items-center gap-2 hover:-translate-y-1"
               >
                 <Linkedin size={20} />
                 LinkedIn
@@ -125,7 +124,7 @@ const Hero = () => {
                 href="/Nikitaa Chaturvedii resumee (3).pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group px-6 py-4   transition-all duration-300 flex items-center gap-2 hover:-translate-y-1 "
+                className="group px-6 py-4 transition-all duration-300 flex items-center gap-2 hover:-translate-y-1"
               >
                 <span className="font-medium text-cyan-600 dark:text-cyan-400 group-hover:text-white transition-colors">
                   Resume
@@ -138,16 +137,16 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Side - Clean Modern Profile */}
+          {/* Right Side - Clean Modern Profile - Now shows on mobile too */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative hidden lg:flex items-center justify-center"
+            className="relative flex items-center justify-center lg:mt-0 mt-3"
           >
             {/* Soft Background Glow */}
             <motion.div
-              className="absolute w-[420px] h-[420px] bg-cyan-500/20 rounded-full blur-3xl"
+              className="absolute w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] lg:w-[420px] lg:h-[420px] bg-cyan-500/20 rounded-full blur-3xl"
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.3, 0.5, 0.3],
@@ -176,7 +175,7 @@ const Hero = () => {
 
               {/* Main Profile Image */}
               <motion.div
-                className="relative w-[360px] h-[360px] rounded-full overflow-hidden border-4 border-white dark:border-slate-900 shadow-2xl"
+                className="relative w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] lg:w-[360px] lg:h-[360px] rounded-full overflow-hidden border-4 border-white dark:border-slate-900 shadow-2xl"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
@@ -196,10 +195,10 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, type: "spring" }}
               >
-                <div className="px-8 py-3.5 bg-cyan-600/70 rounded-2xl shadow-2xl">
+                <div className="px-6 py-3 lg:px-8 lg:py-3.5 bg-cyan-600/70 rounded-2xl shadow-2xl">
                   <div className="flex items-center gap-2">
                     <Code2 className="w-4 h-4 text-white" strokeWidth={2.5} />
-                    <span className="text-white font-bold text-sm">
+                    <span className="text-white font-bold text-xs sm:text-sm">
                       React Developer
                     </span>
                   </div>
@@ -218,7 +217,7 @@ const Hero = () => {
                   ease: "easeInOut",
                 }}
               >
-                <div className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 rounded-full shadow-lg border border-cyan-500/30">
+                <div className="flex items-center gap-2 px-3 py-2 lg:px-4 bg-white dark:bg-slate-900 rounded-full shadow-lg border border-cyan-500/30">
                   <motion.div
                     className="w-2 h-2 rounded-full bg-cyan-500"
                     animate={{
@@ -243,7 +242,7 @@ const Hero = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.7 }}
               >
-                <div className="px-4 py-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-xl shadow-lg border border-cyan-500/20">
+                <div className="px-3 py-2 lg:px-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-xl shadow-lg border border-cyan-500/20">
                   <span className="text-cyan-600 dark:text-cyan-400 font-semibold text-xs">
                     React.js
                   </span>
@@ -256,7 +255,7 @@ const Hero = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.8 }}
               >
-                <div className="px-4 py-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-xl shadow-lg border border-cyan-500/20">
+                <div className="px-3 py-2 lg:px-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-xl shadow-lg border border-cyan-500/20">
                   <span className="text-cyan-600 dark:text-cyan-400 font-semibold text-xs">
                     Nextjs
                   </span>
@@ -264,12 +263,12 @@ const Hero = () => {
               </motion.div>
 
               <motion.div
-                className="absolute -left-10 bottom-[30%]"
+                className="absolute -left-10 bottom-[25%]"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.9 }}
               >
-                <div className="px-4 py-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-xl shadow-lg border border-cyan-500/20">
+                <div className="px-3 py-2  lg:px-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-xl shadow-lg border border-cyan-500/20">
                   <span className="text-cyan-600 dark:text-cyan-400 font-semibold text-xs">
                     UI/UX
                   </span>
@@ -277,10 +276,10 @@ const Hero = () => {
               </motion.div>
             </div>
 
-            {/* Tech Stack Icons - React, Next.js, Tailwind, TypeScript */}
+            {/* Tech Stack Icons - Only on very large screens */}
             {/* React Icon - Top Right */}
             <motion.div
-              className="absolute top-[12%] -right-14 p-3.5 bg-gradient-to-br from-cyan-500/15 to-cyan-600/25 dark:from-cyan-500/25 dark:to-cyan-600/35 backdrop-blur-sm rounded-2xl shadow-xl border border-cyan-500/40"
+              className="hidden xl:block absolute top-[12%] -right-14 p-3.5 bg-gradient-to-br from-cyan-500/15 to-cyan-600/25 dark:from-cyan-500/25 dark:to-cyan-600/35 backdrop-blur-sm rounded-2xl shadow-xl border border-cyan-500/40"
               animate={{
                 y: [0, -10, 0],
                 rotate: [0, 5, 0],
@@ -299,7 +298,7 @@ const Hero = () => {
 
             {/* Next.js Icon - Bottom Left */}
             <motion.div
-              className="absolute bottom-[15%] -left-14 p-3.5 bg-gradient-to-br from-slate-700/15 to-slate-800/25 dark:from-slate-600/25 dark:to-slate-700/35 backdrop-blur-sm rounded-2xl shadow-xl border border-slate-600/40 dark:border-slate-500/40"
+              className="hidden xl:block absolute bottom-[15%] -left-14 p-3.5 bg-gradient-to-br from-slate-700/15 to-slate-800/25 dark:from-slate-600/25 dark:to-slate-700/35 backdrop-blur-sm rounded-2xl shadow-xl border border-slate-600/40 dark:border-slate-500/40"
               animate={{
                 y: [0, 10, 0],
                 rotate: [0, -5, 0],
@@ -319,7 +318,7 @@ const Hero = () => {
 
             {/* Tailwind Icon - Top Left */}
             <motion.div
-              className="absolute top-[18%] -left-14 p-3.5 bg-gradient-to-br from-cyan-400/15 to-cyan-500/25 dark:from-cyan-400/25 dark:to-cyan-500/35 backdrop-blur-sm rounded-2xl shadow-xl border border-cyan-400/40"
+              className="hidden xl:block absolute top-[18%] -left-14 p-3.5 bg-gradient-to-br from-cyan-400/15 to-cyan-500/25 dark:from-cyan-400/25 dark:to-cyan-500/35 backdrop-blur-sm rounded-2xl shadow-xl border border-cyan-400/40"
               animate={{
                 x: [0, 8, 0],
                 rotate: [0, 8, 0],
@@ -339,7 +338,7 @@ const Hero = () => {
 
             {/* TypeScript Icon - Bottom Right */}
             <motion.div
-              className="absolute bottom-[18%] -right-14 p-3.5 bg-gradient-to-br from-slate-600/15 to-slate-700/25 dark:from-slate-500/25 dark:to-slate-600/35 backdrop-blur-sm rounded-2xl shadow-xl border border-slate-500/40 dark:border-slate-400/40"
+              className="hidden xl:block absolute bottom-[18%] -right-14 p-3.5 bg-gradient-to-br from-slate-600/15 to-slate-700/25 dark:from-slate-500/25 dark:to-slate-600/35 backdrop-blur-sm rounded-2xl shadow-xl border border-slate-500/40 dark:border-slate-400/40"
               animate={{
                 x: [0, -8, 0],
                 rotate: [0, -8, 0],
@@ -361,7 +360,7 @@ const Hero = () => {
             {[...Array(6)].map((_, i) => (
               <motion.div
                 key={`particle-${i}`}
-                className="absolute w-2 h-2 rounded-full bg-cyan-500/40"
+                className="hidden xl:block absolute w-2 h-2 rounded-full bg-cyan-500/40"
                 style={{
                   top: `${15 + i * 12}%`,
                   left: i % 2 === 0 ? "5%" : "95%",

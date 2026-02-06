@@ -86,9 +86,9 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative px-4 overflow-hidden min-h-screen flex flex-col justify-center bg-slate-50 dark:bg-slate-950"
+      className="relative px-4  overflow-hidden flex flex-col justify-center bg-slate-50 dark:bg-slate-950"
     >
-      <div className="max-w-7xl mx-auto w-full relative z-10">
+      <div className="max-w-7xl mt-10 md:pt-1 mx-auto w-full relative z-10">
         {/* --- HEADER --- */}
         <div className="text-center mb-8 md:mb-10 px-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-3 md:mb-4">
@@ -101,7 +101,7 @@ const Projects = () => {
         </div>
 
         {/* --- NEW: TOP PART (TECH STACK) --- */}
-        <div className="flex justify-center mb-3 md:mb-16 animate-fade-in px-4">
+        <div className="flex justify-center  md:mb-10 animate-fade-in px-4">
           <div className="inline-flex flex-wrap justify-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-xl sm:rounded-2xl bg-white/50 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200 dark:border-slate-800 shadow-sm">
             <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-cyan-50 dark:bg-cyan-950/30 text-cyan-600 dark:text-cyan-400 text-xs sm:text-sm font-semibold">
               <Globe size={14} className="sm:w-4 sm:h-4" /> React & Next.js
@@ -119,7 +119,7 @@ const Projects = () => {
         </div>
 
         {/* --- 3D SLIDER CONTAINER --- */}
-        <div className="relative h-[500px] sm:h-[520px] md:h-[550px] flex items-center justify-center perspective-1000 mb-4 md:mb-12">
+        <div className="relative h-[500px] sm:h-[520px] md:h-[550px] flex items-center justify-center perspective-1000 ">
           <AnimatePresence mode="popLayout">
             {projectsData.map((project, index) => {
               const style = getCardStyle(index);
@@ -138,16 +138,16 @@ const Projects = () => {
                   className={`
                     absolute w-[85%] sm:w-[80%] md:w-[450px] lg:w-[500px] 
                     h-fit top-0 bottom-0 m-auto
-                    rounded-2xl sm:rounded-3xl border border-white/60 dark:border-slate-700/60
-                    bg-white/70 dark:bg-slate-900/80 backdrop-blur-xl
-                    shadow-2xl dark:shadow-[0_0_50px_-10px_rgba(6,182,212,0.15)]
+                    rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-slate-700/60
+                    bg-white dark:bg-slate-900/80 backdrop-blur-xl
+                    shadow-xl shadow-slate-200/50 dark:shadow-[0_0_50px_-10px_rgba(6,182,212,0.15)]
                     flex flex-col overflow-hidden cursor-grab active:cursor-grabbing
-                    ${isActive ? "ring-1 ring-cyan-500/50" : ""}
+                    ${isActive ? "ring-2 ring-cyan-500/60" : ""}
                   `}
                 >
                   {/* Card Banner */}
-                  <div className=" py-4 md:py-6 relative bg-cyan-800/30 flex items-center justify-center overflow-hidden flex-shrink-0">
-                    <div className="relative z-10 bg-cyan-300/10 backdrop-blur-md p-2 rounded-xl sm:rounded-2xl border border-cyan-300/60 text-cyan-400 shadow-lg">
+                  <div className=" py-4 md:py-6 relative bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/30 dark:to-blue-900/30 flex items-center justify-center overflow-hidden flex-shrink-0">
+                    <div className="relative z-10 bg-white/80 dark:bg-cyan-300/10 backdrop-blur-md p-2 rounded-xl sm:rounded-2xl border border-cyan-200 dark:border-cyan-300/60 text-cyan-600 dark:text-cyan-400 shadow-lg">
                       <project.icon
                         size={28}
                         className="sm:w-8 sm:h-8 md:w-9 md:h-9"
@@ -191,7 +191,7 @@ const Projects = () => {
                           e.stopPropagation();
                           setSelectedProject(project);
                         }}
-                        className="flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-cyan-400/60 hover:bg-cyan-600 text-white text-sm sm:text-base font-semibold transition-all flex items-center justify-center gap-1.5 sm:gap-2 group"
+                        className="flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-cyan-500 hover:bg-cyan-600 text-white text-sm sm:text-base font-semibold transition-all flex items-center justify-center gap-1.5 sm:gap-2 group shadow-sm hover:shadow-md"
                       >
                         <Maximize2
                           size={16}
@@ -257,9 +257,9 @@ const Projects = () => {
               </button>
 
               {/* Header with Icon */}
-              <div className="relative h-32 bg-cyan-800/40 flex items-center justify-center overflow-hidden">
+              <div className="relative h-32 bg-gradient-to-br from-cyan-50 to-blue-100 dark:from-cyan-900/40 dark:to-blue-900/40 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#3de1f712_1px,transparent_1px),linear-gradient(to_bottom,#50d2fa12_1px,transparent_1px)] bg-[size:32px_32px]"></div>
-                <div className="relative z-10 bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 text-white shadow-lg">
+                <div className="relative z-10 bg-white dark:bg-white/10 backdrop-blur-md p-4 rounded-xl border border-cyan-200 dark:border-white/20 text-cyan-600 dark:text-white shadow-lg">
                   <selectedProject.icon size={36} />
                 </div>
               </div>
@@ -319,7 +319,7 @@ const Projects = () => {
                     href={selectedProject.links.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-cyan-500/30 hover:bg-cyan-600 text-white rounded-lg font-semibold transition-all text-sm"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-semibold transition-all text-sm shadow-sm hover:shadow-md"
                   >
                     <ExternalLink size={18} />
                     Live Demo

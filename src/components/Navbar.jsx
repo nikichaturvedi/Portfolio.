@@ -155,11 +155,11 @@ const Navbar = () => {
 
         {/* --- MOBILE MENU OVERLAY --- */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-            isOpen ? "max-h-[500px] opacity-100 pb-6" : "max-h-0 opacity-0"
+          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+            isOpen ? "max-h-[600px] opacity-100 pb-6" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="px-4 pt-2 flex flex-col gap-2">
+          <div className="px-4 pt-2 flex flex-col gap-2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg rounded-b-xl">
             {navLinks.map((link, index) => (
               <a
                 key={link.id}
@@ -197,6 +197,25 @@ const Navbar = () => {
                 icon={<Github size={20} />}
                 label="GitHub"
               />
+            </div>
+
+            {/* Theme Toggle for Mobile */}
+            <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
+              <button
+                onClick={toggleTheme}
+                className="w-full flex items-center justify-between p-4 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-cyan-500 hover:text-white dark:hover:bg-cyan-500 transition-all duration-300 group"
+              >
+                <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-white">
+                  {isDark ? "Light Mode" : "Dark Mode"}
+                </span>
+                <div
+                  className={`transition-transform duration-500 text-slate-600 dark:text-slate-300 group-hover:text-white ${
+                    isDark ? "rotate-180" : "rotate-0"
+                  }`}
+                >
+                  {isDark ? <Sun size={20} /> : <Moon size={20} />}
+                </div>
+              </button>
             </div>
           </div>
         </div>
